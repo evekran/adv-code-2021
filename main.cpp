@@ -1,6 +1,7 @@
 #include <iostream>
 #include "challenges/01_sonar_sweep/01_sonar_sweep.h"
 #include "challenges/02_dive/02_dive.h"
+#include "challenges/03_xxx/03_xxx.h"
 
 int main() {
     int challenge;
@@ -13,6 +14,8 @@ int main() {
             return sonar_sweep();
         case 2:
             return dive();
+        case 3:
+            return xxx();
         default:
             std::cout << "Invalid input." << std::endl;
             return 0;
