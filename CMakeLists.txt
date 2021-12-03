@@ -8,5 +8,5 @@ add_executable(
         main.cpp
         challenges/01_sonar_sweep/01_sonar_sweep.cpp challenges/01_sonar_sweep/01_sonar_sweep.h
         challenges/02_dive/02_dive.cpp challenges/02_dive/02_dive.h
-        challenges/03_xxx/03_xxx.cpp challenges/03_xxx/03_xxx.h
+        challenges/03_binary_diagnostic/03_binary_diagnostic.cpp challenges/03_binary_diagnostic/03_binary_diagnostic.h
 )
