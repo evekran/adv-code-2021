@@ -1,17 +1,19 @@
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <numeric>
+#include "../BaseChallenge.h"
 
-void dive_pt_one(std::ifstream &input) {
-    std::string command;
 
-    int result ;
-    int x = 0, y = 0;
+class Dive : public BaseChallenge {
+private:
+    void part_one() override {
+        int result ;
+        std::string command;
 
-    if (input.is_open()) {
-        while ( getline (input,command) )
-        {
+        int x = 0, y = 0;
+
+        for (const auto& line : this->input_buffer) {
+            command = line;
             std::string delimiter = " ";
             std::string instruction = command.substr(0, command.find(delimiter));
             std::string value = command.erase(0, command.find(delimiter) + delimiter.length());
@@ -26,25 +28,22 @@ void dive_pt_one(std::ifstream &input) {
                 std::cout << "Unknown command";
             }
         }
-    } else {
-        std::cout << "File not found";
+        result = x * y;
+        std::cout << "Horizontal position: " << x << std::endl;
+        std::cout << "Depth: " << y << std::endl;
+        std::cout << "Output: " << result << std::endl;
     }
 
-    result = x * y;
-    std::cout << "Horizontal position: " << x << std::endl;
-    std::cout << "Depth: " << y << std::endl;
-    std::cout << "Output: " << result << std::endl;
-}
+    void part_two() override {
+        std::string command;
 
-void dive_pt_two(std::ifstream &input) {
-    std::string command;
+        int result ;
+        int x = 0, y = 0, aim = 0;
 
-    int result ;
-    int x = 0, y = 0, aim = 0;
+        std::vector<int> window;
 
-    if (input.is_open()) {
-        while ( getline (input,command) )
-        {
+        for (const auto& line : this->input_buffer) {
+            command = line;
             std::string delimiter = " ";
             std::string instruction = command.substr(0, command.find(delimiter));
             std::string value = command.erase(0, command.find(delimiter) + delimiter.length());
@@ -60,27 +59,14 @@ void dive_pt_two(std::ifstream &input) {
                 std::cout << "Unknown command";
             }
         }
-    } else {
-        std::cout << "File not found";
+
+        result = x * y;
+        std::cout << "Horizontal position: " << x << std::endl;
+        std::cout << "Depth: " << y << std::endl;
+        std::cout << "Aim: " << aim << std::endl;
+        std::cout << "Output: " << result << std::endl;
     }
 
-    result = x * y;
-    std::cout << "Horizontal position: " << x << std::endl;
-    std::cout << "Depth: " << y << std::endl;
-    std::cout << "Aim: " << aim << std::endl;
-    std::cout << "Output: " << result << std::endl;
-}
-
-int dive() {
-    std::cout << "Day 2: Dive!" << std::endl;
-    std::ifstream input;
-    input.open("../inputs/02_dive.txt");
-
-    dive_pt_one(input);
-    input.clear();
-    input.seekg(0);
-    dive_pt_two(input);
-
-    input.close();
-    return 0;
-}
+public:
+    Dive() : BaseChallenge("02_dive.txt",  "Day 2: Dive!") {}
+};

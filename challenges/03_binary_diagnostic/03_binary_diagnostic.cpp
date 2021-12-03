@@ -6,14 +6,15 @@
 #include <sstream>
 using namespace std;
 
+#include "../BaseChallenge.h"
 
-void part_one(ifstream &input) {
-    string line;
-    int common_bits[12] = {0,0,0,0,0, 0,0,0,0,0, 0,0};
+class BinaryDiagnostic : public BaseChallenge {
+private:
+    void part_one() override {
+        string line;
+        int common_bits[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-    if (input.is_open()) {
-        while ( getline (input,line) )
-        {
+        for (const auto& line : this->input_buffer) {
             for (int i = 0; i < 12; i++) {
                 if (line[i] == '0') {
                     common_bits[i] -= 1;
@@ -44,52 +45,17 @@ void part_one(ifstream &input) {
         cout << "Gamma value: " << gamma_value << endl;
         cout << "Epsilon value: " << epsilon_value << endl;
         cout << "Power consumption: " << epsilon_value * gamma_value << endl;
-    } else {
-        cout << "File not found";
-    }
-}
-
-int find_common_bit(std::vector<string> &readings, int position = 0, bool is_least = false) {
-    int frequency = 0;
-    for (auto reading : readings) {
-        if (reading[position] == '0') {
-            frequency -= 1;
-        } else {
-            frequency += 1;
-        }
     }
 
-    int common_bit = 0;
-    if (frequency >= 0) {
-        common_bit = 1;
-    }
-    if (not is_least) {
-        return common_bit;
-    }
+    void part_two() override {
+        string line;
+        std::vector<string> readings;
+        std::vector<string> oxygen_readings;
+        std::vector<string> co2_readings;
 
-    return common_bit == 0 ? 1 : 0;
-}
+        std::vector<int> window;
 
-int vector_to_int(std::vector<string> &v) {
-    std::ostringstream bin_stream;
-    for (auto & e : v) {
-        bin_stream << e;
-    }
-    std::string bin_string(bin_stream.str());
-    int gamma_value = stoi(bin_string, 0, 2);
-
-    return gamma_value;
-}
-
-void part_two(std::ifstream &input) {
-    string line;
-    std::vector<string> readings;
-    std::vector<string> oxygen_readings;
-    std::vector<string> co2_readings;
-
-    if (input.is_open()) {
-        while ( getline (input,line) )
-        {
+        for (const auto& line : this->input_buffer) {
             oxygen_readings.push_back(line);
             co2_readings.push_back(line);
         }
@@ -145,23 +111,40 @@ void part_two(std::ifstream &input) {
         cout << "Oxygen rating: " << oxygen_rating << endl;
         cout << "C02 rating: " << co2_rating << endl;
         cout << "Life support rating: " << oxygen_rating * co2_rating << endl;
-    } else {
-        cout << "File not found";
     }
-}
 
-int binary_diagnostic() {
-    cout << "Day 3: Binary Diagnostic" << endl;
-    ifstream input;
-    input.open("../inputs/03_binary_diagnostic.txt");
+    int find_common_bit(std::vector<string> &readings, int position = 0, bool is_least = false) {
+        int frequency = 0;
+        for (auto reading : readings) {
+            if (reading[position] == '0') {
+                frequency -= 1;
+            } else {
+                frequency += 1;
+            }
+        }
 
-    part_one(input);
-    input.clear();
-    input.seekg(0);
+        int common_bit = 0;
+        if (frequency >= 0) {
+            common_bit = 1;
+        }
+        if (not is_least) {
+            return common_bit;
+        }
 
-    cout << endl;
-    part_two(input);
+        return common_bit == 0 ? 1 : 0;
+    }
 
-    input.close();
-    return 0;
-}
+    int vector_to_int(std::vector<string> &v) {
+        std::ostringstream bin_stream;
+        for (auto & e : v) {
+            bin_stream << e;
+        }
+        std::string bin_string(bin_stream.str());
+        int gamma_value = stoi(bin_string, 0, 2);
+
+        return gamma_value;
+    }
+
+public:
+    BinaryDiagnostic() : BaseChallenge("03_binary_diagnostic.txt",  "Day 3: Binary Diagnostic") {}
+};

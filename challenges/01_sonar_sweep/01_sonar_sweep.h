@@ -1,4 +1,14 @@
 #ifndef DAY_01_SONAR_SWEEP
 #define DAY_01_SONAR_SWEEP
-int sonar_sweep();
+
+#include "../BaseChallenge.h"
+
+class SonarSweep : public BaseChallenge {
+private:
+    void part_one() override;
+    void part_two() override;
+
+public:
+    SonarSweep();
+};
 #endif

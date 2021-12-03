@@ -1,7 +1,7 @@
 #include <iostream>
-#include "challenges/01_sonar_sweep/01_sonar_sweep.h"
-#include "challenges/02_dive/02_dive.h"
-#include "challenges/03_binary_diagnostic/03_binary_diagnostic.h"
+#include "challenges/01_sonar_sweep/01_sonar_sweep.cpp"
+#include "challenges/02_dive/02_dive.cpp"
+#include "challenges/03_binary_diagnostic/03_binary_diagnostic.cpp"
 
 int main() {
     int challenge;
@@ -11,13 +11,18 @@ int main() {
 
     switch (challenge) {
         case 1:
-            return sonar_sweep();
+            SonarSweep().run();
+            break;
         case 2:
-            return dive();
+            Dive().run();
+            break;
         case 3:
-            return binary_diagnostic();
+            BinaryDiagnostic().run();
+            break;
         default:
             std::cout << "Invalid input." << std::endl;
-            return 0;
+            break;
     }
+
+    return 0;
 }
