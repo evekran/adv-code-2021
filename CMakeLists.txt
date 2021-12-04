@@ -9,4 +9,6 @@ add_executable(
         challenges/01_sonar_sweep/01_sonar_sweep.cpp challenges/01_sonar_sweep/01_sonar_sweep.h
         challenges/02_dive/02_dive.cpp challenges/02_dive/02_dive.h
         challenges/03_binary_diagnostic/03_binary_diagnostic.cpp challenges/03_binary_diagnostic/03_binary_diagnostic.h
-        challenges/BaseChallenge.cpp challenges/BaseChallenge.h)
+        challenges/04_giant_squid/04_giant_squid.cpp challenges/04_giant_squid/04_giant_squid.h
+        challenges/BaseChallenge.cpp challenges/BaseChallenge.h
+)
