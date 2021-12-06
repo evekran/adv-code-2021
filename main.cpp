@@ -3,6 +3,8 @@
 #include "challenges/02_dive/02_dive.cpp"
 #include "challenges/03_binary_diagnostic/03_binary_diagnostic.cpp"
 #include "challenges/04_giant_squid/04_giant_squid.cpp"
+#include "challenges/05_day_five/05_day_five.cpp"
+#include "challenges/06_day_six/06_day_six.cpp"
 
 int main() {
     int challenge;
@@ -22,6 +24,12 @@ int main() {
             break;
         case 4:
             GiantSquid().run();
+            break;
+        case 5:
+            DayFive().run();
+            break;
+        case 6:
+            DaySix().run();
             break;
         default:
             std::cout << "Invalid input." << std::endl;
