@@ -21,7 +21,7 @@ protected:
 public:
     BaseChallenge(std::string filename, std::string challenge_name);
 
-    void run();
+    virtual void run();
 };
 
 

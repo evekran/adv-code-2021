@@ -26,8 +26,10 @@ void BaseChallenge::run() {
     std::cout << this->challenge_name << std::endl;
     this->read_input();
 
+    std::cout << "PART ONE" << std::endl;
     this->part_one();
     std::cout << std::endl;
+    std::cout << "PART TWO" << std::endl;
     this->part_two();
 }
 

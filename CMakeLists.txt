@@ -10,7 +10,7 @@ add_executable(
         challenges/02_dive/02_dive.cpp challenges/02_dive/02_dive.h
         challenges/03_binary_diagnostic/03_binary_diagnostic.cpp challenges/03_binary_diagnostic/03_binary_diagnostic.h
         challenges/04_giant_squid/04_giant_squid.cpp challenges/04_giant_squid/04_giant_squid.h
-        challenges/05_day_five/05_day_five.cpp challenges/05_day_five/05_day_five.h
-        challenges/06_day_six/06_day_six.cpp challenges/06_day_six/06_day_six.h
+        challenges/05_hydrothermal_venture/05_hydrothermal_venture.cpp challenges/05_hydrothermal_venture/05_hydrothermal_venture.h
+        challenges/06_lanternfish/06_lanternfish.cpp challenges/06_lanternfish/06_lanternfish.h
         challenges/BaseChallenge.cpp challenges/BaseChallenge.h
-)
+        challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.cpp challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.h)

@@ -1,15 +1,15 @@
-#ifndef DAY_06_DAY_SIX
-#define DAY_06_DAY_SIX
+#ifndef DAY_05_DAY_FIVE
+#define DAY_05_DAY_FIVE
 #include "../BaseChallenge.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
-class DaySix : public BaseChallenge {
+class HydrothermalVenture : public BaseChallenge {
 private:
     void part_one() override;
     void part_two() override;
 public:
-    DaySix();
+    HydrothermalVenture();
 };
 #endif

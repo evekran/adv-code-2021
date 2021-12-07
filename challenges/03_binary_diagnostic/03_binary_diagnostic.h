@@ -9,8 +9,8 @@ class BinaryDiagnostic : public BaseChallenge {
 private:
     void part_one() override;
     void part_two() override;
-    int find_common_bit(std::vector<string> &readings, int position = 0, bool is_least = false);
-    int vector_to_int(std::vector<string> &v);
+    static int find_common_bit(std::vector<string> &readings, int position = 0);
+    static int vector_to_int(std::vector<string> &v);
 
 public:
     BinaryDiagnostic();

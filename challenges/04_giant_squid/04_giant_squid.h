@@ -11,5 +11,8 @@ private:
     void part_two() override;
 public:
     GiantSquid();
+    vector<vector<string>> get_boards();
+    static bool is_winner(vector<string> board);
+    static void print_board(vector<string> board, const string &drawn_number);
 };
 #endif
