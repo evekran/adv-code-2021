@@ -12,5 +12,7 @@ add_executable(
         challenges/04_giant_squid/04_giant_squid.cpp challenges/04_giant_squid/04_giant_squid.h
         challenges/05_hydrothermal_venture/05_hydrothermal_venture.cpp challenges/05_hydrothermal_venture/05_hydrothermal_venture.h
         challenges/06_lanternfish/06_lanternfish.cpp challenges/06_lanternfish/06_lanternfish.h
+        challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.cpp challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.h
+        challenges/08_seven_segment_search/08_seven_segment_search.cpp challenges/08_seven_segment_search/08_seven_segment_search.h
         challenges/BaseChallenge.cpp challenges/BaseChallenge.h
-        challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.cpp challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.h)
+)
