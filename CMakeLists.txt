@@ -14,5 +14,6 @@ add_executable(
         challenges/06_lanternfish/06_lanternfish.cpp challenges/06_lanternfish/06_lanternfish.h
         challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.cpp challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.h
         challenges/08_seven_segment_search/08_seven_segment_search.cpp challenges/08_seven_segment_search/08_seven_segment_search.h
+        challenges/09_day_9/09_day_9.h challenges/09_day_9/09_day_9.cpp
         challenges/BaseChallenge.cpp challenges/BaseChallenge.h
-)
+        challenges/10_day_10/10_day_10.h challenges/10_day_10/10_day_10.cpp)

@@ -7,13 +7,16 @@
 #include "challenges/06_lanternfish/06_lanternfish.h"
 #include "challenges/07_the_treachery_of_whales/07_the_treachery_of_whales.h"
 #include "challenges/08_seven_segment_search/08_seven_segment_search.h"
+#include "challenges/09_day_9/09_day_9.h"
+#include "challenges/10_day_10/10_day_10.h"
 
 int main() {
     int challenge;
 
     std::cout << "Pick a day to run a challenge solution." << std::endl;
-    std::cin >> challenge;
+//    std::cin >> challenge;
 
+    challenge = 9;
     BaseChallenge *challenges[25] = {
             new SonarSweep(),
             new Dive(),
@@ -23,6 +26,8 @@ int main() {
             new Lanternfish(),
             new TheTreacheryOfWhales(),
             new SevenSegmentSearch(),
+            new DayNine(),
+            new DayTen(),
     };
 
     if (challenges[challenge - 1]) {
